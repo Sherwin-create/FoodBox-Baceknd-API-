@@ -17,7 +17,10 @@ public class CusinesService {
 	
 	public Cusines addCusine(Cusines cusine) {
 		return repo.save(cusine);
-		
+	}
+	
+	public Cusines updateCusines(Cusines cusine) {
+		return repo.save(cusine);
 	}
 	
 	public void deleteCusineById(Long cId) {

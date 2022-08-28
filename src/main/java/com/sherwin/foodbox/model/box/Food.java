@@ -9,8 +9,6 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
 @Entity
 @Table(name="food")
 public class Food {
@@ -32,12 +30,14 @@ public class Food {
 
 	private String img;
 	
+	private boolean isEnabled;
+	
 	public Food() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public Food(long fId, String fName, String fDescription, Cusines cusines, String price,String img) {
+	public Food(long fId, String fName, String fDescription, Cusines cusines, String price,String img,boolean isEnabled) {
 		super();
 		this.fId = fId;
 		this.fName = fName;
@@ -45,6 +45,7 @@ public class Food {
 		this.cusines = cusines;
 		this.price = price;
 		this.img = img;
+		this.isEnabled = isEnabled;
 	}
 
 	public long getfId() {
@@ -95,6 +96,13 @@ public class Food {
 		this.img = img;
 	}
 	
-	
+	public boolean isEnabled() {
+		return isEnabled;
+	}
+
+	public void setEnabled(boolean isEnabled) {
+		this.isEnabled = isEnabled;
+	}
+
 	
 }
